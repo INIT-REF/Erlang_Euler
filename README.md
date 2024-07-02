@@ -1,1 +1,1 @@
-Trying to learn [Futhark](https://futhark-lang.org) by solving Project Euler Problems.
+Trying to learn Erlang by solving Project Euler Problems.
