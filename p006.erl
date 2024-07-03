@@ -3,5 +3,8 @@
 -module(p006).
 -export([solve/0]).
 
-solve() -> solve(lists:seq(1, 100)).
-solve(L) -> trunc(math:pow(lists:sum(L), 2)) - lists:sum([X * X || X <- L]).
+ssd(Limit) -> ssd(0, 0, Limit).
+ssd(A, B, 0) -> A * A - B;
+ssd(A, B, N) -> ssd(A + N, B + N * N, N - 1).
+
+solve() -> ssd(100).
