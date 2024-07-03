@@ -1,4 +1,4 @@
-%% My solution to Project Euler prolem 008
+%% Solution for Project Euler prolem 008
 
 -module(p008).
 -export([solve/0]).

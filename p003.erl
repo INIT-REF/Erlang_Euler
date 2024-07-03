@@ -1,4 +1,4 @@
-%% Solution to Project Euler problem 003
+%% Solution for Project Euler problem 003
 %% Simplified factorization to account for the fact that it is an odd number
 
 -module(p003).

@@ -1,4 +1,4 @@
-%% Solution to Project Euler problem 002
+%% Solution for Project Euler problem 002
 
 -module(p002).
 -export([solve/0]).

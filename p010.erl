@@ -1,8 +1,6 @@
-%% Solution for Project Euler prolem 007
-%% The limit for the prime sieve can be found by the fact that
-%% the nth prime is guaranteed to be < n * (ln(n) + ln(ln(n)))
+%% Solution for Project Euler prolem 010
 
--module(p007).
+-module(p010).
 -export([solve/0]).
 
 noprime(S, D, Limit) -> noprime(S, D, D * D, Limit).
@@ -17,12 +15,12 @@ primes(S, D, Limit) ->
         true -> primes(noprime(S, D, Limit), D + 1, Limit)
     end.
 
-find10001st(S) -> find10001st(S, 3, 1).
-find10001st(_, I, 10001) -> I - 2;
-find10001st(S, I, C) ->
+primesum(S) -> primesum(S, 3, 2).
+primesum(_, I, Sum) when I >= 2000000 -> Sum;
+primesum(S, I, Sum) ->
     case 1 == array:get(I, S) of
-        true -> find10001st(S, I + 2, C + 1);
-        false -> find10001st(S, I + 2, C)
+        true -> primesum(S, I + 2, Sum + I);
+        false -> primesum(S, I + 2, Sum)
     end.
 
-solve() -> find10001st(primes(114500)).
+solve() -> primesum(primes(2000000)).
