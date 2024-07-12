@@ -17,12 +17,8 @@ primes(S, D, Limit) ->
         true -> primes(noprime(S, D, Limit), D + 1, Limit)
     end.
 
-find10001st(S) -> find10001st(S, 3, 1).
-find10001st(_, I, 10001) -> I - 2;
-find10001st(S, I, C) ->
-    case 1 == array:get(I, S) of
-        true -> find10001st(S, I + 2, C + 1);
-        false -> find10001st(S, I + 2, C)
-    end.
+find10001st(S) -> find10001st(S, 1, 1).
+find10001st(_, I, 10001) -> I;
+find10001st(S, I, C) -> find10001st(S, I + 2, C + array:get(I + 2, S)).
 
 solve() -> find10001st(primes(114500)).
