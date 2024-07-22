@@ -5,7 +5,7 @@
 -export([solve/0]).
 
 lpf(N) -> lpf(N, 3).
-lpf(1,D) -> D;
+lpf(1, D) -> D;
 lpf(N, D) -> 
     case N rem D == 0 of
         true -> lpf(N div D, D);
